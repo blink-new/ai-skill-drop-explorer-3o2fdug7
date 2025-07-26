@@ -28,25 +28,25 @@ export function Header({ activeTab, onTabChange }: HeaderProps) {
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-2 flex-shrink-0 min-w-0">
+        <div className="flex items-center justify-between h-16 gap-2">
+          <div className="flex items-center space-x-2 flex-shrink-0 min-w-[140px] sm:min-w-[200px]">
             <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
               <Mic className="w-5 h-5 text-white" />
             </div>
-            <div className="min-w-0">
-              <h1 className="text-lg sm:text-xl font-semibold text-blue-600 truncate">AI Skill Drop</h1>
-              <p className="text-xs text-gray-500 hidden sm:block">Content Production Portal</p>
+            <div className="min-w-0 flex-1">
+              <h1 className="text-base sm:text-lg lg:text-xl font-semibold text-blue-600 truncate">AI Skill Drop</h1>
+              <p className="text-xs text-gray-500 hidden sm:block truncate">Content Production Portal</p>
             </div>
           </div>
           
-          <div className="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
+          <div className="flex items-center space-x-1 sm:space-x-2 lg:space-x-4 flex-shrink-0 min-w-0">
             {/* Content Type Selector */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" className="flex items-center space-x-1 sm:space-x-2 min-w-[140px] sm:min-w-[180px] justify-between">
+                <Button variant="outline" className="flex items-center space-x-1 sm:space-x-2 min-w-[120px] sm:min-w-[160px] lg:min-w-[180px] justify-between">
                   <div className="flex items-center space-x-1 sm:space-x-2 min-w-0">
                     <ActiveIcon className="w-4 h-4 flex-shrink-0" />
-                    <span className="font-medium truncate text-sm sm:text-base">{activeTabData?.label}</span>
+                    <span className="font-medium truncate text-xs sm:text-sm lg:text-base">{activeTabData?.label}</span>
                   </div>
                   <ChevronDown className="w-4 h-4 flex-shrink-0" />
                 </Button>
@@ -78,11 +78,11 @@ export function Header({ activeTab, onTabChange }: HeaderProps) {
               variant="ghost"
               size="sm"
               onClick={() => window.open('https://www.linkedin.com/groups/9528875/', '_blank')}
-              className="flex items-center space-x-1 sm:space-x-2 text-blue-600 hover:text-blue-700 hover:bg-blue-50 px-2 sm:px-3"
+              className="flex items-center space-x-1 text-blue-600 hover:text-blue-700 hover:bg-blue-50 px-1 sm:px-2 lg:px-3 flex-shrink-0"
             >
               <ExternalLink className="w-4 h-4 flex-shrink-0" />
-              <span className="font-medium hidden md:inline text-sm">LinkedIn Group</span>
-              <span className="font-medium md:hidden text-sm">LinkedIn</span>
+              <span className="font-medium hidden sm:inline text-xs sm:text-sm lg:text-base">LinkedIn Group</span>
+              <span className="font-medium sm:hidden text-xs">LI</span>
             </Button>
           </div>
         </div>
